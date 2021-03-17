@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.html",
   "scripts": {
-    "dev": "gulp watch --dev --sync",
+    "serve": "gulp watch --dev --sync",
     "build": "gulp build"
   },
   "author": "Evgeny Svirin < esvirin@mail.com >",
