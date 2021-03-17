@@ -1,0 +1,338 @@
+@import "./typography.less";
+
+.section-one{
+  width: 100vw;
+  height: 100vh;
+  background-color: #2d8ffc;
+  background-image: url('../img/first_background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
+  padding: 0;
+  color: @myBlue;
+  font-family: gotham;
+
+   .section-one__header{
+     font-size: 50px;
+     display: block;
+     position: relative;
+     top: 150px;
+     left: 50px;
+     p{
+       margin: 0;
+       padding: 0;
+       
+     }
+   }
+
+  .section-one__tags{
+    font-size: 20px;
+    font-weight: bold;
+    .tag-one{
+      position: absolute;
+      top: 280px;
+      left: 625px;
+    }
+    .tag-two{
+      position: absolute;
+      top: 400px;
+      left: 225px;
+    }
+    .tag-three{
+      position: absolute;
+      top: 510px;
+      left: 370px;
+    }
+    .tag-four{
+      position: absolute;
+      top: 490px;
+      left: 800px;
+    } 
+
+    .circle{
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid @myRed;
+      background-color: @myOrange;
+      opacity: 0.5;
+      transform-origin: 50% 50%;
+    }
+
+    .circle-one{
+      position: absolute;
+      top: 260px;
+      left: 560px;
+      width: 50px;
+      height: 50px;
+    
+
+    &::after{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background-color: @myOrange;
+      top: 20px;
+      left: 19px;
+      width: 10px;
+      height: 10px;
+      transform-origin: 50% 50%;
+     
+      @keyframes myScaleCenter {
+        0%{
+          border: 1px solid @myOrange;
+          
+          background-color: @myRed;
+        }
+        100%{
+          background-color: @myRed;
+          border: 1px solid @myRed;
+          transform: scale(2);
+        }
+      }
+      animation: myScaleCenter 1.5s ease infinite;
+
+    }
+
+    &::before{
+      
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid @myRed;
+      background-color: @myOrange;
+      opacity: 0.5;
+      top: 11px;
+      left: 11px;
+      width: 25px;
+      height: 25px;
+      transform-origin: 50% 50%;
+      @keyframes myScale {
+        0%{
+          border: 2px solid @myRed;
+        }
+        100%{
+          border: 2px solid @myRed;
+          transform: scale(2);
+          opacity: 0.7;
+        }
+      }
+      animation: myScale 1.5s ease 0.7s infinite;
+    }
+    }
+
+    .circle-two{
+      position: absolute;
+      top: 425px;
+      left: 270px;
+      width: 30px;
+      height: 30px;
+    
+
+    &::after{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background-color: @myOrange;
+      top: 9px;
+      left: 9px;
+      width: 10px;
+      height: 10px;
+      transform-origin: 50% 50%;
+     
+      @keyframes myScaleCenter {
+        0%{
+          border: 1px solid @myOrange;
+          
+          background-color: @myRed;
+        }
+        100%{
+          background-color: @myRed;
+          border: 1px solid @myRed;
+          transform: scale(1.5);
+        }
+      }
+      animation: myScaleCenter 1.5s ease infinite;
+
+    }
+
+    &::before{
+      
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid @myRed;
+      background-color: @myOrange;
+      opacity: 0.5;
+      top: 5px;
+      left: 6px;
+      width: 15px;
+      height: 15px;
+      transform-origin: 50% 50%;
+      @keyframes myScale {
+        0%{
+          border: 2px solid @myRed;
+        }
+        100%{
+          border: 2px solid @myRed;
+          transform: scale(2);
+          opacity: 0.7;
+        }
+      }
+      animation: myScale 1.5s ease 0.7s infinite;
+    }
+    }
+
+    .circle-three{
+      position: absolute;
+      top: 535px;
+      left: 475px;
+      width: 20px;
+      height: 20px;
+    
+
+    &::after{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background-color: @myOrange;
+      top: 7px;
+      left: 6px;
+      width: 5px;
+      height: 5px;
+      transform-origin: 50% 50%;
+     
+      @keyframes myScaleCenter {
+        0%{
+          border: 1px solid @myOrange;
+          
+          background-color: @myRed;
+        }
+        100%{
+          background-color: @myRed;
+          border: 1px solid @myRed;
+          transform: scale(1.5);
+        }
+      }
+      animation: myScaleCenter 1.5s ease infinite;
+
+    }
+
+    &::before{
+      
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid @myRed;
+      background-color: @myOrange;
+      opacity: 0.5;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      transform-origin: 50% 50%;
+      @keyframes myScale {
+        0%{
+          border: 2px solid @myRed;
+        }
+        100%{
+          border: 2px solid @myRed;
+          transform: scale(2);
+          opacity: 0.7;
+        }
+      }
+      animation: myScale 1.5s ease 0.7s infinite;
+    }
+    
+  }
+
+  .circle-four{
+    position: absolute;
+    top: 515px;
+    left: 817px;
+    width: 20px;
+    height: 20px;
+  
+
+  &::after{
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: @myOrange;
+    top: 7px;
+    left: 6px;
+    width: 5px;
+    height: 5px;
+    transform-origin: 50% 50%;
+   
+    @keyframes myScaleCenter {
+      0%{
+        border: 1px solid @myOrange;
+        
+        background-color: @myRed;
+      }
+      100%{
+        background-color: @myRed;
+        border: 1px solid @myRed;
+        transform: scale(1.5);
+      }
+    }
+    animation: myScaleCenter 1.5s ease infinite;
+
+  }
+
+  &::before{
+    
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid @myRed;
+    background-color: @myOrange;
+    opacity: 0.5;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    transform-origin: 50% 50%;
+    @keyframes myScale {
+      0%{
+        border: 2px solid @myRed;
+      }
+      100%{
+        border: 2px solid @myRed;
+        transform: scale(2);
+        opacity: 0.7;
+      }
+    }
+    animation: myScale 1.5s ease 0.7s infinite;
+  }
+  
+}
+
+
+  }
+
+  .section-one__footer{
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    bottom: 20px;
+    font-size: 15px;
+    color: white;
+    padding: 0;
+    margin: 0;
+  
+  
+    .section-one__footer_arrow{
+      width: 40px;
+      height: 40px;
+      border-right: 3px solid white;
+      border-bottom: 3px solid white;
+      transform: rotate(45deg);
+      margin-top: 0;
+    }
+  }
+}

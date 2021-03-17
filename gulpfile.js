@@ -22,13 +22,13 @@ function styles(){
 	return gulp.src('./src/css/**/*.less')
 			   .pipe(gulpif(isDev, sourcemaps.init()))
 			   .pipe(less())
-			   //.pipe(concat('style.css'))
+			   .pipe(concat('style.css'))
 			   .pipe(gcmq())
 			   .pipe(autoprefixer({
 								overrideBrowserslist: ['> 0.1%'],
 		            cascade: false
 		        }))
-			   //.on('error', console.error.bind(console))
+			   .on('error', console.error.bind(console))
 			   .pipe(gulpif(isProd, cleanCSS({
 			   		level: 2
 			   })))
@@ -37,9 +37,16 @@ function styles(){
 			   .pipe(gulpif(isSync, browserSync.stream()));
 }
 
+function fonts(){
+	return gulp.src('./src/fonts/**/*.ttf')
+			   .pipe(gulp.dest('./build/fonts'))
+				 .pipe(gulpif(isSync, browserSync.stream()));
+}
+
 function img(){
 	return gulp.src('./src/img/**/*')
 			   .pipe(gulp.dest('./build/img'))
+				 .pipe(gulpif(isSync, browserSync.stream()));
 }
 
 function html(){
@@ -67,10 +74,11 @@ function watch(){
 	gulp.watch('./src/css/**/*.less', styles);
 	gulp.watch('./src/**/*.html', html);
 	gulp.watch('./src/js/**/*.js', js);
+	gulp.watch('./src/fonts/**/*.ttf', fonts);
 }
 
 let build = gulp.series(clear, 
-	gulp.parallel(styles, img, html, js)
+	gulp.parallel(styles, img, html, js, fonts)
 );
 
 gulp.task('build', build);
