@@ -1,14 +1,14 @@
 @import "./typography.less";
 
 .section-one{
-  width: 100vw;
-  height: 100vh;
-  background-color: #2d8ffc;
+  width: 1024px;
+  height: 768px;
   background-image: url('../img/first_background.png');
   background-repeat: no-repeat;
-  background-size: cover;
- 
+  background-size: contain;
+  background-position: center;
   padding: 0;
+  margin: 0 auto;
   color: @myBlue;
   font-family: gotham;
 
@@ -21,7 +21,6 @@
      p{
        margin: 0;
        padding: 0;
-       
      }
    }
 
@@ -29,29 +28,29 @@
     font-size: 20px;
     font-weight: bold;
     .tag-one{
-      position: absolute;
-      top: 280px;
+      position: relative;
+      top: 160px;
       left: 625px;
     }
     .tag-two{
-      position: absolute;
-      top: 400px;
-      left: 225px;
+      position: relative;
+      top: 280px;
+      left: 60px;
     }
     .tag-three{
-      position: absolute;
-      top: 510px;
-      left: 370px;
+      position: relative;
+      top: 390px;
+      left: 90px;
     }
     .tag-four{
-      position: absolute;
-      top: 490px;
-      left: 800px;
+      position: relative;
+      top: 370px;
+      left: 300px;
     } 
 
     .circle{
       display: block;
-      position: absolute;
+      position: relative;
       border-radius: 50%;
       border: 2px solid @myRed;
       background-color: @myOrange;
@@ -60,9 +59,9 @@
     }
 
     .circle-one{
-      position: absolute;
-      top: 260px;
-      left: 560px;
+      position: relative;
+      top: 125px;
+      left: 562px;
       width: 50px;
       height: 50px;
     
@@ -71,7 +70,7 @@
       content: '';
       position: absolute;
       border-radius: 50%;
-      background-color: @myOrange;
+      background-color:  @myRed;
       top: 20px;
       left: 19px;
       width: 10px;
@@ -80,14 +79,13 @@
      
       @keyframes myScaleCenter {
         0%{
-          border: 1px solid @myOrange;
-          
-          background-color: @myRed;
+          border: 2px solid @myOrange;
         }
         100%{
-          background-color: @myRed;
-          border: 1px solid @myRed;
-          transform: scale(2);
+         
+          border: 2px solid @myRed;
+          transform: scale(4);
+          opacity: 0.7;
         }
       }
       animation: myScaleCenter 1.5s ease infinite;
@@ -122,8 +120,8 @@
     }
 
     .circle-two{
-      position: absolute;
-      top: 425px;
+      position: relative;
+      top: 235px;
       left: 270px;
       width: 30px;
       height: 30px;
@@ -184,8 +182,8 @@
     }
 
     .circle-three{
-      position: absolute;
-      top: 535px;
+      position: relative;
+      top: 310px;
       left: 475px;
       width: 20px;
       height: 20px;
@@ -247,8 +245,8 @@
   }
 
   .circle-four{
-    position: absolute;
-    top: 515px;
+    position: relative;
+    top: 265px;
     left: 817px;
     width: 20px;
     height: 20px;
@@ -312,27 +310,5 @@
 
   }
 
-  .section-one__footer{
-    width: 100%;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    align-items: center;
-    bottom: 20px;
-    font-size: 15px;
-    color: white;
-    padding: 0;
-    margin: 0;
-  
-  
-    .section-one__footer_arrow{
-      width: 40px;
-      height: 40px;
-      border-right: 3px solid white;
-      border-bottom: 3px solid white;
-      transform: rotate(45deg);
-      margin-top: 0;
-    }
-  }
+
 }
