@@ -1,6 +1,7 @@
 @import "./typography.less";
 
 .section-one{
+  display: block;
   width: 1024px;
   height: 768px;
   background-image: url('../img/first_background.png');
@@ -8,7 +9,6 @@
   background-size: contain;
   background-position: center;
   padding: 0;
-  margin: 0 auto;
   color: @myBlue;
   font-family: gotham;
 
@@ -80,6 +80,7 @@
       @keyframes myScaleCenter {
         0%{
           border: 2px solid @myOrange;
+          transform: scale(1);
         }
         100%{
          
@@ -107,7 +108,7 @@
       transform-origin: 50% 50%;
       @keyframes myScale {
         0%{
-          border: 2px solid @myRed;
+          border: 5px solid @myRed;
         }
         100%{
           border: 2px solid @myRed;
