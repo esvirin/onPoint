@@ -36,8 +36,6 @@ document.addEventListener('scroll', function(){
 })
 
 
-
-
 //touch handler
 document.addEventListener('touchstart', start =>{
   touchStart = start.touches[0].clientY
