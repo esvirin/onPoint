@@ -5,16 +5,15 @@ const rangeImage = document.querySelector('.range__input img')
 const rangeFill = document.querySelector('.range__input .fill')
 const sectionThree = document.querySelector('.section-three')
 const parallaxImg = document.querySelectorAll('.section-two img')
-const breakPoints = [0, 768, 1536]
+
 
 let currentPage = 0
 let touchStart = 0
 let touchMove = 0
 let touchModule = 0 
 
-
+//add parallax
 document.addEventListener('scroll',function(){
-  console.log(parallaxImg)
   parallaxImg.forEach(item=>{
     item.style.transform = `translateY(${window.scrollY/8}px)`
   })
@@ -55,13 +54,15 @@ document.addEventListener('touchmove', move=>{
   touchModule = touchStart - touchMove
 },{ passive: false })
 
+
+
 document.addEventListener('touchend', function(){
 
   if(touchModule > 200 && currentPage < 2) {
-    window.scrollTo(0, breakPoints[currentPage + 1],{ behavior: 'smooth'})
+    window.scrollBy({ top: 768, behavior: 'smooth' })
   }
   if(touchModule < -200 && currentPage > 0) {
-    window.scrollTo(0, breakPoints[currentPage - 1],{ behavior: 'smooth' })
+    window.scrollBy({ top: -768, behavior: 'smooth'})
   }
 
 })
