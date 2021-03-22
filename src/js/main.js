@@ -16,7 +16,7 @@ let touchModule = 0
 document.addEventListener('scroll',function(){
   console.log(parallaxImg)
   parallaxImg.forEach(item=>{
-    item.style.transform = `translateY(${window.scrollY/7}px)`
+    item.style.transform = `translateY(${window.scrollY/8}px)`
   })
 })
 
