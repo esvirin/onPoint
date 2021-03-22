@@ -75,20 +75,14 @@ inputRange.addEventListener('change',function(ev){
 
   switch(+ev.target.value){
     case 0 :
-      rangeFill.style.width = '0%'
-      rangeImage.style.marginLeft = 'inherit'
       sectionThree.style.backgroundPosition = 'left'
     break;
 
     case 1 : 
-      rangeFill.style.width = '50%'
-      rangeImage.style.marginLeft = '50%'
       sectionThree.style.backgroundPosition = 'center'
     break;
 
     case 2 :
-      rangeFill.style.width = '100%'
-      rangeImage.style.marginLeft = '100%'
       sectionThree.style.backgroundPosition = 'right'
     break;
   }
