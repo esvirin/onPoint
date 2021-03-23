@@ -1,8 +1,6 @@
 const floatFooter = document.querySelector('.float__footer')
 const floatPagin = document.querySelectorAll('.pag_item') 
 const inputRange = document.querySelector('#input__range')
-const rangeImage = document.querySelector('.range__input img')
-const rangeFill = document.querySelector('.range__input .fill')
 const sectionThree = document.querySelector('.section-three')
 const parallaxImg = document.querySelectorAll('.section-two img')
 
@@ -67,22 +65,29 @@ document.addEventListener('touchend', function(){
 
 })
 
-
+//sticky range
+inputRange.addEventListener('input',function(ev){
+  let val = +ev.target.value
+  if(val <= 25){inputRange.value = 0}else
+  if(val >= 75 && val <= 100){inputRange.value = 100}else
+  if(val > 100 && val <= 125){inputRange.value = 100}else
+  if(val >= 175 && val <= 200){inputRange.value = 200}
+})
 
 
 // logic of input-range
-inputRange.addEventListener('change',function(ev){
-
+inputRange.addEventListener('input',function(ev){
+  
   switch(+ev.target.value){
     case 0 :
       sectionThree.style.backgroundPosition = 'left'
     break;
 
-    case 1 : 
+    case 100 : 
       sectionThree.style.backgroundPosition = 'center'
     break;
 
-    case 2 :
+    case 200 :
       sectionThree.style.backgroundPosition = 'right'
     break;
   }
