@@ -21,9 +21,8 @@ document.addEventListener('scroll', function(){
   //kill bottom nav
   let position = window.scrollY
   position > 50 ? floatFooter.style.display = 'none' : floatFooter.style.display = 'flex'
-  
-  
-    if(position >= 1500){
+    
+  if(position >= 1500){
       currentPage = 2 
     }else if(position < 750){
       currentPage = 0
@@ -90,6 +89,7 @@ inputRange.addEventListener('input',function(ev){
   }
 })
 
+// style input-range
 inputRange.addEventListener('input',function(ev){
   inputRange.style.background = `-webkit-linear-gradient(left, #d1eaff 0%, #d1eaff ${+ev.target.value}%, #d1eaff80 ${+ev.target.value}%, #d1eaff80 100%)`
 })
