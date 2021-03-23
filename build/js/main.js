@@ -68,14 +68,14 @@ document.addEventListener('touchend', function(){
 //sticky range
 inputRange.addEventListener('input',function(ev){
   let val = +ev.target.value
-  if(val <= 25){inputRange.value = 0}else
-  if(val >= 75 && val <= 100){inputRange.value = 100}else
-  if(val > 100 && val <= 125){inputRange.value = 100}else
-  if(val >= 175 && val <= 200){inputRange.value = 200}
+  if(val <= 15){inputRange.value = 0}else
+  if(val >= 35 && val <= 50){inputRange.value = 50}else
+  if(val > 50 && val <= 65){inputRange.value = 50}else
+  if(val >= 85 && val <= 100){inputRange.value = 100}
 })
 
 
-// logic of input-range
+// logic of section-three background
 inputRange.addEventListener('input',function(ev){
   
   switch(+ev.target.value){
@@ -83,15 +83,20 @@ inputRange.addEventListener('input',function(ev){
       sectionThree.style.backgroundPosition = 'left'
     break;
 
-    case 100 : 
+    case 50 : 
       sectionThree.style.backgroundPosition = 'center'
     break;
 
-    case 200 :
+    case 100 :
       sectionThree.style.backgroundPosition = 'right'
     break;
   }
 })
+
+inputRange.addEventListener('input',function(ev){
+  inputRange.style.background = `-webkit-linear-gradient(left, #d1eaff 0%, #d1eaff ${+ev.target.value}%, #d1eaff80 ${+ev.target.value}%, #d1eaff80 100%)`
+})
+
 
 
 
