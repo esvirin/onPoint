@@ -3,12 +3,12 @@ const floatPagin = document.querySelectorAll('.pag_item')
 const inputRange = document.querySelector('#input__range')
 const sectionThree = document.querySelector('.section-three')
 const parallaxImg = document.querySelectorAll('.section-two img')
-
+const container = document.querySelector('.container')
 
 let currentPage = 0
-let touchStart = 0
-let touchMove = 0
-let touchModule = 0 
+let touchStartY = 0
+let touchMoveY = 0
+let touchModuleY = 0 
 
 //add parallax
 document.addEventListener('scroll',function(){
@@ -30,7 +30,6 @@ document.addEventListener('scroll', function(){
     }else {
      currentPage = 1}
 
-
 // pagination
   floatPagin.forEach(function(item){
     if(item.id-1 === currentPage){
@@ -42,24 +41,22 @@ document.addEventListener('scroll', function(){
 
 
 //touch handler
-document.addEventListener('touchstart', start =>{
-  touchStart = start.touches[0].clientY
+container.addEventListener('touchstart', start =>{
+  touchStartY = start.touches[0].clientY
 })
 
-document.addEventListener('touchmove', move=>{
+container.addEventListener('touchmove', move=>{
   move.preventDefault()
-  touchMove = move.touches[0].clientY
-  touchModule = touchStart - touchMove
+  touchMoveY = move.touches[0].clientY
+  touchModuleY = touchStartY - touchMoveY
 },{ passive: false })
 
+container.addEventListener('touchend', function(){
 
-
-document.addEventListener('touchend', function(){
-
-  if(touchModule > 200 && currentPage < 2) {
+  if(touchModuleY > 150 && currentPage < 2) {
     window.scrollBy({ top: 768, behavior: 'smooth' })
   }
-  if(touchModule < -200 && currentPage > 0) {
+  if(touchModuleY < -150 && currentPage > 0) {
     window.scrollBy({ top: -768, behavior: 'smooth'})
   }
 
@@ -96,8 +93,3 @@ inputRange.addEventListener('input',function(ev){
 inputRange.addEventListener('input',function(ev){
   inputRange.style.background = `-webkit-linear-gradient(left, #d1eaff 0%, #d1eaff ${+ev.target.value}%, #d1eaff80 ${+ev.target.value}%, #d1eaff80 100%)`
 })
-
-
-
-
-
